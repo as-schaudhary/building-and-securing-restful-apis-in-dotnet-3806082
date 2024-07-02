@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="mapster" Version="7.4.0" />
+    <PackageReference Include="Microsoft.AspNetCore.identity.entityframeworkcore" Version="8.0.6" />
     <PackageReference Include="Microsoft.aspnetcore.mvc.newtonsoftjson" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="8.0.6" />

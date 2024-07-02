@@ -1,0 +1,58 @@
+@LiL.TimeTracking_HostAddress = https://localhost:7117
+@AccessToken= CfDJ8BUef3Xle1NFpJ-GKMs5IK4Fb1kq8ehaO5K1mumPUdvDQnXV2La20oWb4a9dnTYaSeRHaoy6SCKXiNwe7de5ItLn_YoE1Tw0xDnQA1_o4NF8nIGD_r0FhALalGSNcBRFcNlvHVq4oMVzZNFSVLPWdWDyLIKuGQi7w0UdHMcfo1HDEx4HSaAZFQIMLX5J8If0y467okNgdLKrfKZkz-AqnNL0SDw1NujpKuP_VvzjMTXWT8HEqZiSDMv9MGqJQn6Ijl4h2536sgktAxyS_uzWa0L4L_UKpHgXkx47xDQl1_mN6GeZoEk0cX1ne0oqxgG_cQP8rfUEY-YZaNU0f8RrjGm8HHaUgP5Sgc9UWzszwqFLFwCfxf-5rrDDanfNlQ_zewYDaYqw98E0yGTtquUIIG7iYEOAn2oRalswwUCYVqu0vgKbdKo7bRWruSMpIJePMdUJHJUl2DySxTrAJsDubPTkjPSSkh0i0Zcqdk-hCiAbKWvEVPEPD43aeSxMaHFB_Rep2wpF8c0bCdAKAyr0RTnSKKQG-N42lkTbKKaTCc86SmHZM_mkI_DumCCUtDyFzx2n1aR1T-78loSZGTyR4WZ2HjlffQT4389eNO90IWZ2uac5pyiN8osxP0q3ZMm3VBk2X7kt6f_zNNaP2hT0MzSXsp5KNlGTSbTuDiUfHzEk2HDK-8uuIMNLZttnwRvUzm5biZSHd8oQJ3FmgBKljwo  
+
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/register
+Content-Type: application/json
+
+{
+    "email":"matt@hplussport.com",
+    "password":"pass@Word1"
+}
+
+###
+
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/login
+Content-Type: application/json
+Accept:application/json 
+
+{
+    "email":"matt@hplussport.com",
+    "password":"pass@Word1"
+}
+
+###
+
+# test authentication
+
+GET {{LiL.TimeTracking_HostAddress}}/api/Employee
+Accept:application/json
+Authorization: Bearer {{AccessToken}}
+###
+
+DELETE {{LiL.TimeTracking_HostAddress}}/api/Project/1
+
+###
+
+
+# invalid user for authorization policy (email domain)
+POST {{LiL.TimeTracking_HostAddress}}/identity/register
+Content-Type: application/json
+
+{
+    "email":"matt@trainingxyz.com",
+    "password":"pass@Word1"
+}
+
+###
+
+
+POST {{LiL.TimeTracking_HostAddress}}/identity/login
+Content-Type: application/json
+Accept:application/json 
+
+{
+    "email":"matt@trainingxyz.com",
+    "password":"pass@Word1"
+}

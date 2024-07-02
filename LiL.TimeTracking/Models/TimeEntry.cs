@@ -12,7 +12,7 @@ namespace LiL.TimeTracking.Models;
 
     [ForeignKey(nameof(ProjectId))]
     public virtual Project Project { get; set; }
-    public DateOnly DateWorked { get; set; }
+    public DateTime DateWorked { get; set; }
     public decimal HoursWorked { get; set; }
 
  }
