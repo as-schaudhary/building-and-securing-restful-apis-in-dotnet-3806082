@@ -1,6 +1,61 @@
-@LiL.TimeTracking_HostAddress = http://localhost:5257
+@LiL.TimeTracking_HostAddress = https://localhost:7117
 
 GET {{LiL.TimeTracking_HostAddress}}/weatherforecast/
 Accept: application/json
+
+###
+
+GET {{LiL.TimeTracking_HostAddress}}/api/Employee
+Accept: application/json
+
+###
+
+GET {{LiL.TimeTracking_HostAddress}}/api/Employee/2
+#checking
+Accept: application/json
+
+###
+
+POST {{LiL.TimeTracking_HostAddress}}/api/Employee
+Content-Type: application/json
+
+{
+    "name": "Jane Doe",
+    "startDate": "2022-03-14"
+}
+
+###
+
+PUT {{LiL.TimeTracking_HostAddress}}/api/Employee/2
+Content-Type: application/json
+
+{
+    "Id": 2,
+    "name": "Jane Doe 2",
+    "startDate": "2022-03-14"
+}
+
+###
+PATCH {{LiL.TimeTracking_HostAddress}}/api/Employee/2
+Content-Type: application/json
+
+[
+{
+    "op": "add",
+    "path": "/name",
+    "value": "Jane Doe"
+}
+]
+###
+POST {{LiL.TimeTracking_HostAddress}}/api/Employee
+Content-Type: application/json
+
+{
+    "name": "Jacob Doe",
+    "startDate": "2019-08-02"
+}
+
+###
+DELETE {{LiL.TimeTracking_HostAddress}}/api/Employee/3
 
 ###
